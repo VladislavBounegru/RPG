@@ -7,10 +7,16 @@ public class Constants {
 
     public static final String TITLE = "Roguelike";
 
-    public static final int BOARD_WIDTH = 800;
-    public static final int BOARD_Height = 600;
+    public static final int WIDTH = 800;
+    public static final int HEIGHT = 600;
+    public static final int BORDERS = 50;
+    public static final int CHARACTER_WIDTH = 34;
+    public static final int CHARACTER_HEIGHT = 50;
 
+    //sped of the app
+    public static final int GAME_SPEED = 10;
 
+    // images
     public static final String BASE_IMAGE_DIRECTORY = "src/main/resources/images/";
     public static final String BACKGROUND_IMAGE_URL = BASE_IMAGE_DIRECTORY + "BackgroundClear.png";
     public static final String BLOCK_IMAGE_URL = BASE_IMAGE_DIRECTORY + "block.png";

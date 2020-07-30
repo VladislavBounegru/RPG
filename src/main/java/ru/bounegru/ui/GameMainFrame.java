@@ -18,7 +18,6 @@ public class GameMainFrame extends JFrame {
 
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
-//        setSize(Constants.BOARD_WIDTH,Constants.BOARD_Height);
         setResizable(false);
         setVisible(true);
 
