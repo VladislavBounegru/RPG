@@ -19,7 +19,6 @@ public class GamePanel extends JPanel {
     public GamePanel() {
         initializeVariables();
         initializeLayout();
-
     }
 
     private void initializeVariables() {

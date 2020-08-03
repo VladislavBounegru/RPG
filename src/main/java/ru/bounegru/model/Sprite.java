@@ -35,7 +35,7 @@ public abstract class Sprite {
         this.y = y;
     }
 
-    public abstract void move();
+
 
     public Sprite() {
         this.dead = false;
