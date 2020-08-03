@@ -1,2 +1,2 @@
 # RPG
-This should be roguelike game
+This should be simple roguelike game
