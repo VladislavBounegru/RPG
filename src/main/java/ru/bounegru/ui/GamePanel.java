@@ -1,9 +1,11 @@
 package ru.bounegru.ui;
 
+import ru.bounegru.app.generators.LevelGenerator;
 import ru.bounegru.callbacks.GameEventListener;
 import ru.bounegru.constants.Constants;
 import ru.bounegru.images.Image;
 import ru.bounegru.images.ImageFactory;
+import ru.bounegru.logic.FieldOfGrid;
 import ru.bounegru.model.Character;
 
 import javax.swing.*;
@@ -14,6 +16,7 @@ public class GamePanel extends JPanel {
     private ImageIcon backgroundImage;
     private Timer timer;
     private Character character;
+    private LevelGenerator levelGenerator;
     private boolean inGame;
 
     public GamePanel() {
@@ -24,6 +27,7 @@ public class GamePanel extends JPanel {
     private void initializeVariables() {
         inGame = true;
         character = new Character();
+        levelGenerator = new LevelGenerator();
         backgroundImage = ImageFactory.createImage(Image.BACKGROUND);
         timer = new Timer(10, new GameLoop(this));
         timer.start();
@@ -37,8 +41,12 @@ public class GamePanel extends JPanel {
 
     private void drawCharacter(Graphics g) {
         g.drawImage(character.getImage(), character.getX(), character.getY(), this);
+
     }
 
+    private void drawLevel(Graphics g) {
+        levelGenerator.drawLevel(g, this);
+    }
 
     @Override
     protected void paintComponent(Graphics g) {
@@ -49,6 +57,7 @@ public class GamePanel extends JPanel {
 
     private void doDrawing(Graphics g) {
         if (inGame) {
+            drawLevel(g);
             drawCharacter(g);
         } else {
             if (timer.isRunning()) {

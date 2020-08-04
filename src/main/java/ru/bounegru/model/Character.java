@@ -4,6 +4,7 @@ import ru.bounegru.constants.Constants;
 import ru.bounegru.controllers.MovingController;
 import ru.bounegru.images.Image;
 import ru.bounegru.images.ImageFactory;
+import ru.bounegru.logic.FieldOfGrid;
 
 import javax.swing.*;
 import java.awt.event.KeyEvent;
@@ -22,11 +23,11 @@ public class Character extends Sprite {
         setImage(imageIcon.getImage());
         movingController = new MovingController(this);
 
-        int startX = Constants.BORDERS + Constants.CHARACTER_WIDTH;
-        System.out.println(Constants.HEIGHT / 2 - Constants.CHARACTER_HEIGHT / 2);
-        int startY = Constants.HEIGHT / 2 - Constants.CHARACTER_HEIGHT / 2;
-        setX(startX);
-        setY(startY);
+        int row = 0;
+        int column = 1;
+        FieldOfGrid.getInstance().markingCell(row , column,2);
+        setX(column * Constants.SIDE_SIZE + Constants.BORDERS);
+        setY(row * Constants.SIDE_SIZE + Constants.BORDERS);
     }
 
     public void move() {
